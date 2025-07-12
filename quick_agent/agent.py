@@ -19,12 +19,12 @@ def get_weather(city: str) -> dict:
     else:
         return {
             'status': 'error',
-            'err_msg': f'The weather information is not available for {city.capital()}.'
+            'err_msg': f'The weather information is not available for {city.capitalize()}.'
         }
     
-agent = Agent(
+root_agent = Agent(
     name='weather_agent',
-    model=DEFAULT_MODEL,
+    model="gemini-2.0-flash",
     description='A helpful weather agent',
     instruction='You are a helpful and polite weather agent.'
                 'You ONLY handle request about the weather.'
